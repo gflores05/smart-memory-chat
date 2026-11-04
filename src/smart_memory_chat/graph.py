@@ -73,7 +73,7 @@ class ChatBotGraph:
   def chatbot_node(self, state: ChatBotState):
     """Processes messages and generates responses."""
     system_prompt = "You are a helpful assistant that remembers previous conversations."
-    messages = [SystemMessage(content=system_prompt)] + state["messages"]
+    messages = [SystemMessage(content=system_prompt), *state["messages"]]
     response = self.llm.invoke(messages)
     return {"messages": [response]}
 
