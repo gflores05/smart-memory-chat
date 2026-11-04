@@ -356,6 +356,19 @@ wheels = [
 ]
 
 [[package]]
+name = "langchain-typesafe"
+version = "0.0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx2" },
+    { name = "langchain-core" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3f/60/538f0cdcd76f221ed4fec844b83801b3fa2360072e519e54911f70b15a67/langchain_typesafe-0.0.1.tar.gz", hash = "sha256:b48e888f861024c866f04e8b10b6aa2d89e57fa3b74530d5d668432ffca89b0a", size = 200959, upload-time = "2026-11-04T00:11:10.361Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3f/6f/cf85d99bee44659a199a874df06e5010f6dd0f991d51adc7aaeda0eb56ae/langchain_typesafe-0.0.1-py3-none-any.whl", hash = "sha256:17222e702829f162292e122141e17e59b339bb198ac5f9307cb8a7dec2e8c497", size = 24935, upload-time = "2026-11-04T00:11:09.226Z" },
+]
+
+[[package]]
 name = "langgraph"
 version = "1.2.19"
 source = { registry = "https://pypi.org/simple" }
@@ -788,6 +801,7 @@ source = { editable = "." }
 dependencies = [
     { name = "langchain" },
     { name = "langchain-openai" },
+    { name = "langchain-typesafe" },
     { name = "langgraph" },
     { name = "langgraph-checkpoint-sqlite" },
     { name = "pydantic-settings" },
@@ -803,6 +817,7 @@ dev = [
 requires-dist = [
     { name = "langchain", specifier = ">=1.4.8" },
     { name = "langchain-openai", specifier = ">=1.7.3" },
+    { name = "langchain-typesafe", specifier = ">=0.0.1" },
     { name = "langgraph", specifier = ">=1.2.19" },
     { name = "langgraph-checkpoint-sqlite", specifier = ">=3.1.3" },
     { name = "pydantic-settings", specifier = ">=2.16.2" },

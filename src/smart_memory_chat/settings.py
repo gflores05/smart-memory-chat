@@ -14,6 +14,10 @@ class Settings(BaseSettings):
   ai_model: str = "gpt-4o-mini"
   ai_model_temperature: float = 0.0
 
+  # Type-Safe API
+  type_safe_api_key: str = "xxxxx"
+  type_safe_model: str = "jev-latest"
+
   model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
 
