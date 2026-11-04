@@ -40,7 +40,6 @@ class ChatBotGraph:
     messages = state["messages"]
 
     relevant_messages = []
-    regular_messages = []
     classifier_state = "This is a conversation between a human and an AI assistant. The following messages are part of the conversation:\n\n"
 
     classifier_questions = {}
@@ -64,13 +63,9 @@ class ChatBotGraph:
         or classification.nouls[f"message_{i + 1}_relevant"].noul >= 0.8
       ):
         relevant_messages.append(msg)
-      else:
-        regular_messages.append(msg)
 
-    # System message + important messages + the 4 most recent regular messages + the last message (which is the most recent assistant message).
-    filtered_messages = (
-      [messages[0]] + relevant_messages + regular_messages[-4:] + [messages[-1]]
-    )
+    # System message + relevant messages + the last message (which is the most recent assistant message).
+    filtered_messages = [messages[0], *relevant_messages, messages[-1]]
 
     # Clear the existing history first, then set the filtered list as the new one.
     return {"messages": [RemoveMessage(id=REMOVE_ALL_MESSAGES), *filtered_messages]}
