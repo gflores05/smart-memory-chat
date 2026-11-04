@@ -1,9 +1,9 @@
 import argparse
 import uuid
 
-from smart_memory_chat.graph import ChatBotGraph
-from smart_memory_chat.session import ChatSession
-from smart_memory_chat.settings import get_settings
+lazy from smart_memory_chat.graph import ChatBotGraph
+lazy from smart_memory_chat.session import ChatSession
+lazy from smart_memory_chat.settings import get_settings
 
 parser = argparse.ArgumentParser(description="A simple chat application.")
 

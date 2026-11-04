@@ -1,5 +1,5 @@
 from langchain.messages import HumanMessage
-from langgraph.graph.state import CompiledStateGraph, RunnableConfig
+lazy from langgraph.graph.state import CompiledStateGraph, RunnableConfig
 
 
 class ChatSession:
