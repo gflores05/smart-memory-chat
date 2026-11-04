@@ -1,0 +1,39 @@
+[project]
+name = "smart-memory-chat"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "gflores05", email = "gabriel.flores0503@gmail.com" }]
+requires-python = ">=3.15.2"
+dependencies = [
+    "langchain>=1.4.8",
+    "langchain-openai>=1.7.3",
+    "langgraph>=1.2.19",
+    "langgraph-checkpoint-sqlite>=3.1.3",
+    "pydantic-settings>=2.16.2",
+]
+
+[project.scripts]
+smart-memory-chat = "smart_memory_chat:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["mypy>=2.4.1", "ruff>=0.17.3"]
+
+[tool.ruff]
+# Sets the indentation style for both linting rules and the formatter
+indent-width = 2
+
+[tool.ruff.format]
+# Enforces spaces instead of tabs
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.14"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+plugins = ["returns.contrib.mypy.returns_plugin"]
